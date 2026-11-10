@@ -1,0 +1,1698 @@
+{
+  "info": {
+    "name": "ГЭДК · Создание папок ЮЛ",
+    "description": "Импортируйте коллекцию Postman и заполните baseUrl стенда без завершающего слеша, token, clientId и srcCode. Для выбранного досье заполните переменные справочников и маршрутизации. УНП и номера договоров в коллекции приведены как тестовые значения. Три позиции с временным кодом требуют согласованных type и clazz перед запуском.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "activeOperationType",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "applicationId",
+      "value": "REQ-123456",
+      "type": "string"
+    },
+    {
+      "key": "applicationPlacedAt",
+      "value": "2026-11-07T08:30:00.000Z",
+      "type": "string"
+    },
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "bpmCaseId",
+      "value": "123456789",
+      "type": "string"
+    },
+    {
+      "key": "clientId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "clientUnp",
+      "value": "100000000",
+      "type": "string"
+    },
+    {
+      "key": "contractId",
+      "value": "TEST-DOG-001",
+      "type": "string"
+    },
+    {
+      "key": "folderClazz",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "folderType",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "isin",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "operationType",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "originalContractId",
+      "value": "TEST-DOG-000",
+      "type": "string"
+    },
+    {
+      "key": "productType",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "shareType",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "srcCode",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "trustForm",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "client_file_corpo · {УНК}[_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 3.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-00\",\n  \"type\": \"client_file_corpo\",\n  \"title\": \"УНК_{{clientId}}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"client_name\": \"ООО «Тестовый клиент»\",\n    \"client_unp\": \"{{clientUnp}}\",\n    \"client_type\": \"1\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_1 · {Юридическое_дело_(ЮД)} _{УНК}[_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 5.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-01\",\n  \"type\": \"file_corpo_1\",\n  \"title\": \"{Юридическое_дело_(ЮД)} _{УНК}[_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_migration_1 · {Миграция_ЮД}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 6. Вид относится к миграции. Проверьте способ создания на стенде.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-02\",\n  \"type\": \"file_corpo_migration_1\",\n  \"title\": \"{Миграция_ЮД}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_2 · {Идентификационное_досье} _{УНК}[_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 8.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-03\",\n  \"type\": \"file_corpo_2\",\n  \"title\": \"{Идентификационное_досье} _{УНК}[_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_migration_3 · {Миграция_ИД}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 9. Вид относится к миграции. Проверьте способ создания на стенде.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-04\",\n  \"type\": \"file_corpo_migration_3\",\n  \"title\": \"{Миграция_ИД}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_3 · {Вклад_(депозит)_№}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 11.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-05-01\",\n  \"type\": \"file_corpo_3\",\n  \"title\": \"{Вклад_(депозит)_№}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_4 · {Займ_нерезидента_№}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 12.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-05-02\",\n  \"type\": \"file_corpo_4\",\n  \"title\": \"{Займ_нерезидента_№}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_migration_4 · {Миграция_ВД}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 13. Вид относится к миграции. Проверьте способ создания на стенде.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-06\",\n  \"type\": \"file_corpo_migration_4\",\n  \"title\": \"{Миграция_ВД}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_5 · {Контракт_№}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 15.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-07\",\n  \"type\": \"file_corpo_5\",\n  \"title\": \"{Контракт_№}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"contract_counterparty\": \"ООО «Тестовый контрагент»\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_migration_2 · {Миграция_АО, ДО}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 17. Вид относится к миграции. Проверьте способ создания на стенде.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-09\",\n  \"type\": \"file_corpo_migration_2\",\n  \"title\": \"{Миграция_АО, ДО}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_6 · {Активные и документарные операции по поручению клиентов (АО)} _{УНК}[_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 18.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-00\",\n  \"type\": \"file_corpo_6\",\n  \"title\": \"{Активные и документарные операции по поручению клиентов (АО)} _{УНК}[_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_7 · {Общие документы (ОД)}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 20.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-01\",\n  \"type\": \"file_corpo_7\",\n  \"title\": \"{Общие документы (ОД)}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_8 · {Отказ}_{Вид АО}_{номер сделки в BPM}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 28. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1. Дальнейшее применение contract_name уточняется.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_8\",\n  \"title\": \"{Отказ}_{Вид АО}_{номер сделки в BPM}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"product_type\": \"{{productType}}\",\n    \"bpm_case_id\": \"{{bpmCaseId}}\",\n    \"active_operation_type\": \"{{activeOperationType}}\",\n    \"contract_name\": \"ДОГОВОР-01\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_9 · {Отказ}_{Вид АО}_{Наименование (договора)}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 29. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1. Дальнейшее применение contract_name уточняется.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_9\",\n  \"title\": \"{Отказ}_{Вид АО}_{Наименование (договора)}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"active_operation_type\": \"{{activeOperationType}}\",\n    \"contract_name\": \"ДОГОВОР-01\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_10 · {Отказ \"Вид АО\" ID заявки}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 30. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1. Дальнейшее применение contract_name уточняется.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_10\",\n  \"title\": \"{Отказ \\\"Вид АО\\\" ID заявки}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{applicationId}}\",\n    \"contract_date\": \"{{applicationPlacedAt}}\",\n    \"active_operation_type\": \"{{activeOperationType}}\",\n    \"contract_name\": \"ДОГОВОР-01\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_11 · {К Д №} {номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 32, 33.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-04\",\n  \"type\": \"file_corpo_11\",\n  \"title\": \"{К Д №} {номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_12 · {Доп согл к КД №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 36, 37.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-04\",\n  \"type\": \"file_corpo_12\",\n  \"title\": \"{Доп согл к КД №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_13 · {Досье по факторингу} [_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 39.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-05\",\n  \"type\": \"file_corpo_13\",\n  \"title\": \"{Досье по факторингу} [_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_14 · {Соглашение о факторинговом обслуживании (СФО) №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 41, 42.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-05\",\n  \"type\": \"file_corpo_14\",\n  \"title\": \"{Соглашение о факторинговом обслуживании (СФО) №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_15 · {Д оп согл к СФО №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 45, 46.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-05\",\n  \"type\": \"file_corpo_15\",\n  \"title\": \"{Д оп согл к СФО №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_16 · {Договор/генеральный договор (ДФ/ГДФ) №}{номер}_{дата} {Договор онлайн (ДФ онлайн) №}{номер}_{дата} (\"Код банковского продукта\" = 5Ф (опция РКД)) {Договор/генеральный договор экспорт (ДФ/ГДФ экспорт) №} {номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 48, 49.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-05\",\n  \"type\": \"file_corpo_16\",\n  \"title\": \"{Договор/генеральный договор (ДФ/ГДФ) №}{номер}_{дата} {Договор онлайн (ДФ онлайн) №}{номер}_{дата} (\\\"Код банковского продукта\\\" = 5Ф (опция РКД)) {Договор/генеральный договор экспорт (ДФ/ГДФ экспорт) №} {номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_17 · {Доп согл к ДФ/ГДФ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 52, 53.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-05\",\n  \"type\": \"file_corpo_17\",\n  \"title\": \"{Доп согл к ДФ/ГДФ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_18 · {Индивидуальное соглашение (ИС) к ГДФ №} {номер}_{дата} {Индивидуальное соглашение (ИС) к ГДФ экспорт) №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 55, 56.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-05\",\n  \"type\": \"file_corpo_18\",\n  \"title\": \"{Индивидуальное соглашение (ИС) к ГДФ №} {номер}_{дата} {Индивидуальное соглашение (ИС) к ГДФ экспорт) №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_19 · {Доп согл к ИС к ГДФ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 59, 60.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-05\",\n  \"type\": \"file_corpo_19\",\n  \"title\": \"{Доп согл к ИС к ГДФ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_20 · {Договор (ДГТ) №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 62, 63.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_20\",\n  \"title\": \"{Договор (ДГТ) №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_21 · {Доп согл к ДГТ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 66, 67.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_21\",\n  \"title\": \"{Доп согл к ДГТ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_59 · {Гарантия №}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 68, 69.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_59\",\n  \"title\": \"{Гарантия №}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_22 · {Гарантия, выданная Банком} [_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 71.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_22\",\n  \"title\": \"{Гарантия, выданная Банком} [_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_23 · {Договор (ДГ) №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 73, 74.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_23\",\n  \"title\": \"{Договор (ДГ) №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_24 · {Доп согл к ДГ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 77, 78.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_24\",\n  \"title\": \"{Доп согл к ДГ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Заготовка · file_corpo_ХХ (v108, стр. 79) · {Гарантия №}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 79. Заготовка. Перед запуском подтвердите вид досье и номенклатуру дел для этой папки.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"{{folderType}}\",\n  \"title\": \"{Гарантия №}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_25 · {Индивидуальное соглашение (ИС) к ДГ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 81, 82.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_25\",\n  \"title\": \"{Индивидуальное соглашение (ИС) к ДГ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_26 · {Доп согл к ИС к ДГ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 85, 86.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-06\",\n  \"type\": \"file_corpo_26\",\n  \"title\": \"{Доп согл к ИС к ДГ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_27 · {Аккредитив, открытый Банком} [_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 88.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-07\",\n  \"type\": \"file_corpo_27\",\n  \"title\": \"{Аккредитив, открытый Банком} [_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_28 · {Договор (ДА) №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 90, 91.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-07\",\n  \"type\": \"file_corpo_28\",\n  \"title\": \"{Договор (ДА) №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_29 · {Доп согл к ДА №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 94, 95.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-07\",\n  \"type\": \"file_corpo_29\",\n  \"title\": \"{Доп согл к ДА №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Заготовка · file_corpo_ХХ (v108, стр. 96) · {Аккредитив №}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 96. Заготовка. Перед запуском подтвердите вид досье и номенклатуру дел для этой папки.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-07\",\n  \"type\": \"{{folderType}}\",\n  \"title\": \"{Аккредитив №}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_30 · {Индивидуальное соглашение (ИС) к ДА №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 98, 99.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-07\",\n  \"type\": \"file_corpo_30\",\n  \"title\": \"{Индивидуальное соглашение (ИС) к ДА №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_31 · {Доп согл к ИС к ДА №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 102, 103.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-07\",\n  \"type\": \"file_corpo_31\",\n  \"title\": \"{Доп согл к ИС к ДА №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_32 · {Соглашение о финансировании (СФ) №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 105, 106.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-08-01\",\n  \"type\": \"file_corpo_32\",\n  \"title\": \"{Соглашение о финансировании (СФ) №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_33 · {Доп согл к СФ №} {номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 109, 110.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-08-02\",\n  \"type\": \"file_corpo_33\",\n  \"title\": \"{Доп согл к СФ №} {номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_34 · {Договор обеспечения №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 112, 113.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-09\",\n  \"type\": \"file_corpo_34\",\n  \"title\": \"{Договор обеспечения №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_35 · {Доп.согл к Д.обеспеч. №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 116, 117.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-09\",\n  \"type\": \"file_corpo_35\",\n  \"title\": \"{Доп.согл к Д.обеспеч. №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_migration_6 · {Миграция_ПЗ}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 119. Вид относится к миграции. Проверьте способ создания на стенде.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-10\",\n  \"type\": \"file_corpo_migration_6\",\n  \"title\": \"{Миграция_ПЗ}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_57 · {Проблемные активы}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 120.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-10\",\n  \"type\": \"file_corpo_57\",\n  \"title\": \"{Проблемные активы}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_36 · {Документарные операции в пользу клиентов, агентские сделки} [_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 122.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-01\",\n  \"type\": \"file_corpo_36\",\n  \"title\": \"{Документарные операции в пользу клиентов, агентские сделки} [_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_37 · {Гарантия №}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 124.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-01\",\n  \"type\": \"file_corpo_37\",\n  \"title\": \"{Гарантия №}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_38 · {Аккредитив №}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 126.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_38\",\n  \"title\": \"{Аккредитив №}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_39 · {Инкассо} [_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 128.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_39\",\n  \"title\": \"{Инкассо} [_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_40 · {Инкассо И№} {номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 130.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_40\",\n  \"title\": \"{Инкассо И№} {номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_41 · {Инкассо И№} {номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 132.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_41\",\n  \"title\": \"{Инкассо И№} {номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_42 · {Агентские сделки} [_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 134.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_42\",\n  \"title\": \"{Агентские сделки} [_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_43 · {Договор АГ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 136.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_43\",\n  \"title\": \"{Договор АГ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_44 · {Доп согл к АГ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 139.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_44\",\n  \"title\": \"{Доп согл к АГ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_45 · {Индивидуальное соглашение (ИС) к АГ №} {номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 141.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_45\",\n  \"title\": \"{Индивидуальное соглашение (ИС) к АГ №} {номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_46 · {Доп. соглашение к ИС АГ №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 144.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_46\",\n  \"title\": \"{Доп. соглашение к ИС АГ №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"add_contract_id\": \"{{originalContractId}}\",\n    \"add_contract_date\": \"2025-12-12T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_47 · {Договор №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 146.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-11-02\",\n  \"type\": \"file_corpo_47\",\n  \"title\": \"{Договор №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_48 · {Эквайринг (Э)} [_]{номер УНК}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 148.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-12\",\n  \"type\": \"file_corpo_48\",\n  \"title\": \"{Эквайринг (Э)} [_]{номер УНК}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_49 · {Эквайринг №}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 151.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-12\",\n  \"type\": \"file_corpo_49\",\n  \"title\": \"{Эквайринг №}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_migration_5 · {Миграция Э}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 153. Вид относится к миграции. Проверьте способ создания на стенде.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-12\",\n  \"type\": \"file_corpo_migration_5\",\n  \"title\": \"{Миграция Э}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_50 · {Операции на финансовом рынке}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 155.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-14-01\",\n  \"type\": \"file_corpo_50\",\n  \"title\": \"{Операции на финансовом рынке}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_51 · {Валюта}_{Форма ДУ} _{дата} _{№}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 157.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-14-01\",\n  \"type\": \"file_corpo_51\",\n  \"title\": \"{Валюта}_{Форма ДУ} _{дата} _{№}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"currency\": \"BYN\",\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"trust_form\": \"{{trustForm}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_52 · {ВидЦБ}_{Наименование эмитента}_{номер гос регистрации} _ {выпуск}_{дата}_{процент}{%}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 159.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-14-02\",\n  \"type\": \"file_corpo_52\",\n  \"title\": \"{ВидЦБ}_{Наименование эмитента}_{номер гос регистрации} _ {выпуск}_{дата}_{процент}{%}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"share_type\": \"{{shareType}}\",\n    \"share_issuance\": \"ВЫПУСК-01\",\n    \"issuer_name\": \"ОАО «Тестовый эмитент»\",\n    \"isin\": \"{{isin}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_53 · {Дата}_{№}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 161.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-14-02\",\n  \"type\": \"file_corpo_53\",\n  \"title\": \"{Дата}_{№}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_54 · {Дата}_{№}{номер}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 163.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-14-02\",\n  \"type\": \"file_corpo_54\",\n  \"title\": \"{Дата}_{№}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_55 · {Вид операции}_{№}{номер}_{дата}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 165.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-14-02\",\n  \"type\": \"file_corpo_55\",\n  \"title\": \"{Вид операции}_{№}{номер}_{дата}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{contractId}}\",\n    \"contract_date\": \"2026-01-15T00:00:00.000Z\",\n    \"operation_type\": \"{{operationType}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_58 · {Эмиссионные документы}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 167.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-14-03\",\n  \"type\": \"file_corpo_58\",\n  \"title\": \"{Эмиссионные документы}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "file_corpo_migration_7 · {Миграция Общая}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 169. Вид относится к миграции. Проверьте способ создания на стенде.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"OPER-01-13\",\n  \"type\": \"file_corpo_migration_7\",\n  \"title\": \"{Миграция Общая}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Заготовка · file_corpo_ХХ (v108, стр. 171) · {Договор №}{номер}_{дата}_{(номер счета)}",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/file",
+        "description": "Эталон v108, строки 171. Заготовка. Перед запуском подтвердите вид досье и номенклатуру дел для этой папки.",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clazz\": \"{{folderClazz}}\",\n  \"type\": \"{{folderType}}\",\n  \"title\": \"{Договор №}{номер}_{дата}_{(номер счета)}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
