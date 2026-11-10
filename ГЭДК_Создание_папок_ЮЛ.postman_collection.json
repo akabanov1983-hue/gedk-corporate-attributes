@@ -388,7 +388,7 @@
       "request": {
         "method": "PUT",
         "url": "{{baseUrl}}/file",
-        "description": "Эталон v108, строки 28. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1. Дальнейшее применение contract_name уточняется.",
+        "description": "Эталон v108, строки 28. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1.",
         "header": [
           {
             "key": "Content-Type",
@@ -397,7 +397,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_8\",\n  \"title\": \"{Отказ}_{Вид АО}_{номер сделки в BPM}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"product_type\": \"{{productType}}\",\n    \"bpm_case_id\": \"{{bpmCaseId}}\",\n    \"active_operation_type\": \"{{activeOperationType}}\",\n    \"contract_name\": \"ДОГОВОР-01\"\n  }\n}",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_8\",\n  \"title\": \"{Отказ}_{Вид АО}_{номер сделки в BPM}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"product_type\": \"{{productType}}\",\n    \"bpm_case_id\": \"{{bpmCaseId}}\",\n    \"active_operation_type\": \"{{activeOperationType}}\"\n  }\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -411,7 +411,7 @@
       "request": {
         "method": "PUT",
         "url": "{{baseUrl}}/file",
-        "description": "Эталон v108, строки 29. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1. Дальнейшее применение contract_name уточняется.",
+        "description": "Эталон v108, строки 29. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1.",
         "header": [
           {
             "key": "Content-Type",
@@ -420,7 +420,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_9\",\n  \"title\": \"{Отказ}_{Вид АО}_{Наименование (договора)}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"active_operation_type\": \"{{activeOperationType}}\",\n    \"contract_name\": \"ДОГОВОР-01\"\n  }\n}",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_9\",\n  \"title\": \"{Отказ}_{Вид АО}_{Наименование (договора)}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"bpm_case_id\": \"ДОГОВОР-01\",\n    \"active_operation_type\": \"{{activeOperationType}}\"\n  }\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -434,7 +434,7 @@
       "request": {
         "method": "PUT",
         "url": "{{baseUrl}}/file",
-        "description": "Эталон v108, строки 30. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1. Дальнейшее применение contract_name уточняется.",
+        "description": "Эталон v108, строки 30. Вендору нужно добавить атрибут «Вид АО». Передайте код из справочника BPM. 1 — Кредит, 2 — Банковская гарантия, 3 — Аккредитив (финансирование аккредитива), 5 — Факторинг, 7 — Приобретение облигаций эмитента. В коллекции для примера задан код 1.",
         "header": [
           {
             "key": "Content-Type",
@@ -443,7 +443,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_10\",\n  \"title\": \"{Отказ \\\"Вид АО\\\" ID заявки}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_id\": \"{{applicationId}}\",\n    \"contract_date\": \"{{applicationPlacedAt}}\",\n    \"active_operation_type\": \"{{activeOperationType}}\",\n    \"contract_name\": \"ДОГОВОР-01\"\n  }\n}",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_10\",\n  \"title\": \"{Отказ \\\"Вид АО\\\" ID заявки}{номер}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"bpm_case_id\": \"{{applicationId}}\",\n    \"contract_date\": \"{{applicationPlacedAt}}\",\n    \"active_operation_type\": \"{{activeOperationType}}\"\n  }\n}",
           "options": {
             "raw": {
               "language": "json"
