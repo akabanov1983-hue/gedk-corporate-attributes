@@ -420,7 +420,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_9\",\n  \"title\": \"{Отказ}_{Вид АО}_{Наименование (договора)}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"bpm_case_id\": \"ДОГОВОР-01\",\n    \"active_operation_type\": \"{{activeOperationType}}\"\n  }\n}",
+          "raw": "{\n  \"clazz\": \"OPER-01-08-03\",\n  \"type\": \"file_corpo_9\",\n  \"title\": \"{Отказ}_{Вид АО}_{Наименование (договора)}\",\n  \"clientId\": \"{{clientId}}\",\n  \"srcCode\": \"{{srcCode}}\",\n  \"openDate\": \"2026-11-07T09:00:00.123456789Z\",\n  \"fieldValues\": {\n    \"contract_name\": \"ДОГОВОР-01\",\n    \"active_operation_type\": \"{{activeOperationType}}\"\n  }\n}",
           "options": {
             "raw": {
               "language": "json"
